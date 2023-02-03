@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .outline{
+        border: 2px solid wheat;
+        width: 400px;
+        height: 400px;
+        border-radius: 10px;
+      }
+      .outline h2{
+        margin-left: 40px;
+      }
+      .content_box{
+        margin-left: 40px;
+        /* text-align: center; */
+      }
+      .content_box input{
+        width: 300px;
+        height: 30px;
+        border-radius: 6px;
+      }
+      .content_box p{
+        font-weight: 700;
+      }
+      .content_box button{
+        width: 310px;
+        height: 30px;
+        border-radius: 6px;
+      }
+      .alert_massage{
+        font-weight: bold;
+      }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="outline"> 
+            <h2>Sing up</h2>
+            <div class="content_box">
+                <p>Email or Phone Number</p>
+          <form action="./document.html" onsubmit=" return validiation()">
+                    <input type="text" id="username">
+                    <p id="alert_massage" style="color: red;font-style: italic;"></p>
+                    <input type="password" id="psw">
+                    <p id="password_allert" style="color: red;font-style: italic;"></p>
+                    <button type="submit">Countinue</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function validiation(){
+
+            let username=document.getElementById('username').value;
+            let password=document.getElementById('psw').value;
+
+            if(username.trim()==""){
+                // alert("Please enter the detalies")
+                let y=document.createTextNode("Enter your Email Or phone number")
+                document.getElementById("alert_massage").appendChild(y);
+                 return false;
+          }
+          else if(password.trim()==""){
+            let x=document.createTextNode("Enter your Password")
+                document.getElementById("password_allert").appendChild(x);
+                 return false;
+          }
+            else{
+                alert('Login succesfull')
+                return true;
+            }
+
+        }
+    </script>
+
+</body>
+</html>
